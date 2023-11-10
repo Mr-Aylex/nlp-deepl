@@ -12,3 +12,6 @@ jax[cpu]
 matplotlib
 seaborn
 click
+scikit-learn
+jupyter
+keras_nlp

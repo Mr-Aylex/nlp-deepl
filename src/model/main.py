@@ -2,8 +2,15 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.feature_extraction.text import CountVectorizer
 from sklearn.pipeline import Pipeline
 
-def make_model():
+from src.model.dumb_model import TextVectoriser, LSTMModel, TransformerModel
+
+
+def make_model(max_len, vocabulary):
+
+    vect = TextVectoriser(max_len=max_len, vocabulary=vocabulary)
+    voc_size = vect.model.vocabulary_size()
+
     return Pipeline([
-        ("count_vectorizer", CountVectorizer()),
-        ("random_forest", RandomForestClassifier()),
+        ("vectorizer", vect),
+        ("model", TransformerModel(voc_size))
     ])

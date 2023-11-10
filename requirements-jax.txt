@@ -1,0 +1,15 @@
+pandas
+numpy
+keras-core
+# Tensorflow.
+tensorflow-cpu==2.13
+torch==2.1.0
+torchvision==0.16.0
+# Jax.
+jax[cuda12_local]
+matplotlib
+seaborn
+click
+scikit-learn
+jupyter
+keras_nlp
